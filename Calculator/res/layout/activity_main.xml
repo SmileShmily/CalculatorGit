@@ -12,18 +12,22 @@
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand7"
             android:text="7" />
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand8"
             android:text="8" />
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand9"
             android:text="9" />
 
         <Button
             style="@style/btn_operate"
+            android:id="@+id/Operate0"
             android:text="/" />
     </LinearLayout>
 
@@ -31,18 +35,22 @@
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand4"
             android:text="4" />
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand5"
             android:text="5" />
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand6"
             android:text="6" />
 
         <Button
             style="@style/btn_operate"
+            android:id="@+id/Operate1"
             android:text="*" />
     </LinearLayout>
 
@@ -50,18 +58,22 @@
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand1"
             android:text="1" />
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand2"
             android:text="2" />
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand3"
             android:text="3" />
 
         <Button
             style="@style/btn_operate"
+            android:id="@+id/Operate2"
             android:text="-" />
     </LinearLayout>
 
@@ -69,18 +81,22 @@
 
         <Button
             style="@style/btn_operand"
+            android:id="@+id/Operand0"
             android:text="0" />
 
         <Button
             style="@style/btn_operate"
+            android:id="@+id/Operate5"
             android:text="c" />
 
         <Button
             style="@style/btn_operate"
+            android:id="@+id/Operate4"
             android:text="=" />
 
         <Button
             style="@style/btn_operate"
+            android:id="@+id/Operate3"
             android:text="+" />
     </LinearLayout>
 
