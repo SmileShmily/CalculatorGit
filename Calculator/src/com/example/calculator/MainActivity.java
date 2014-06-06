@@ -3,9 +3,11 @@ package com.example.calculator;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.calculator.R.id;
 import com.example.view.CaInputView;
 import com.example.view.CaInputView.InputHappend;
 import com.example.view.CaOutputView;
+import com.exmaple.model.CalModel;
 
 import android.os.Bundle;
 import android.R.integer;
@@ -20,6 +22,9 @@ public class MainActivity extends Activity implements InputHappend {
 	
 	private CaInputView civ;
 	private CaOutputView cov;
+	private CalModel calModel;
+	
+	private String number = "0";
 	
 	
 	
@@ -30,6 +35,7 @@ public class MainActivity extends Activity implements InputHappend {
 		
 		civ = new CaInputView(this, this);
 		cov = new CaOutputView(this);
+		calModel = new CalModel();
 		
 
 	}
@@ -43,13 +49,32 @@ public class MainActivity extends Activity implements InputHappend {
 
 	@Override
 	public void operandIn(String operand) {
-		cov.outputData(operand);
-		
+		number = number.equals("0")? operand : number + operand;
+		cov.outputData(number);		
 	}
 
 	@Override
 	public void operateIn(String operate) {
-		cov.outputData(operate);
+		if(operate.equalsIgnoreCase("c")){
+			calModel.reset();
+			number = "0";
+			cov.outputData(number);
+			return;
+		}
+		
+		calModel.pushOperand(number);
+		double result = calModel.pushOperate(operate);
+		
+		if(result % 1d == 0d)
+		{
+			int temp = Double.valueOf(result).intValue();
+			cov.outputData(String.valueOf(temp));
+		}
+		else{
+			cov.outputData(String.valueOf(result));
+		}
+	
+		number = "0";
 	}
 
 }

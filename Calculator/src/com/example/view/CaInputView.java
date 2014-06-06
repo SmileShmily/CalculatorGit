@@ -50,7 +50,7 @@ public class CaInputView {
 				public void onClick(View v) {
 					Button cli_btn = (Button)v;
 					String text = cli_btn.getText().toString();
-					dlg.operateIn(text);					
+					dlg.operandIn(text);					
 				}
 			});
 		}
